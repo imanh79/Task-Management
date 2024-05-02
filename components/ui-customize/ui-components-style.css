@@ -1,0 +1,39 @@
+.title {
+  @apply text-foreground;
+}
+.iconstyle {
+  @apply text-border;
+}
+.subtitle {
+  @apply text-sm;
+}
+.smtitle {
+  @apply text-sm font-extralight text-border;
+}
+.sidebg {
+  @apply bg-bgside;
+}
+.heading {
+  @apply text-foreground font-bold text-lg;
+}
+.inputsearch {
+  @apply absolute left-2.5  bottom-1/4;
+}
+.squarestyle {
+  @layer fa-square;
+  @layer fa-solid;
+}
+.fadein {
+  animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.rightstyleinputs {
+  @apply mb-2 bg-transparent border-divider focus-visible:ring-[none] placeholder:text-border;
+}
