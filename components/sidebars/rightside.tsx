@@ -44,7 +44,7 @@ const Rightside = () => {
         placeholder="Title"
         className="rightstyleinputs"
         value={tasktodo[0]?.tasktitle}
-      /> 
+      />    
       <Textarea
         placeholder="Description"
         className="rightstyleinputs h-[200px]"
