@@ -49,7 +49,7 @@ const InputMain = () => {
   });
   const addTodo = (newTodo: any) => {
     setTodos([...todos, newTodo]);
-  }
+  };
   const isDuplicate = (newValue: any) => {
     return todos.some((todo) => todo.title === newValue);
   };
