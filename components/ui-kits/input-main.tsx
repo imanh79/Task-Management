@@ -68,7 +68,7 @@ const InputMain = () => {
 
   useEffect(() => {
     setvaluetime(timedate);
-  });
+  }, []);
   interface List {
     listname: string;
     listcolor: string;
