@@ -3,6 +3,7 @@ export type IconProps = {
   iconName: string;
   color?: string;
   initialstyle?: string;
+  onClick?:any;
 };
 
 export type TitleProps = {
@@ -26,6 +27,10 @@ export type HeadingProps = {
   heading: string;
   additionalClasses?: string;
 };
+export type defaultlists = {
+  listname?: string;
+  listcolor?: string;
+};
 // ui kits components
 export type MenuItemTypes = {
   href?: any;
@@ -34,21 +39,38 @@ export type MenuItemTypes = {
   additionalClasses?: string;
   number?: Number;
   additionalstyles?: string;
+  value?: any;
+  onclick?: any;
+  variant?: any;
 };
 export type Todo = {
-  id: number;
-  title: string;
-  done: boolean;
-  deleted: boolean;
-  date: Date;
-  important: boolean;
+  id?: number;
+  title?: string;
+  done?: boolean;
+  deleted?: boolean;
+  date?: Date | string;
+  important?: boolean;
+  list?: any;
+  newtodo?: any;
+  listname?: string;
+  listcolor?: string;
+  selectlist?: any;
+};
+export type TodoWithDefaults = {
+  list: {
+    listname: string;
+    listcolor: string;
+  }[];
 };
 export type TaskTodo = {
   tasktitle?: any;
-  description?: boolean;
-  date?: Date;
+  description?: string;
+  date?: Date | string |undefined;
   status?: string;
   prevTaskTodos?: any;
+  selectlistcolor?: any;
+  selectlistname?: any;
+  id?: any;
 };
 export type ThemeContextType = {
   toggle: boolean;

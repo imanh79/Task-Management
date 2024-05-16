@@ -2,7 +2,7 @@
 
 import { IconProps } from "@/types/types";
 
-const Icon = ({ iconName, style, color, initialstyle }: IconProps) => {
+const Icon = ({ iconName, style, color, initialstyle, onClick }: IconProps) => {
   return (
     <i
       className={` iconstyle
@@ -11,6 +11,7 @@ const Icon = ({ iconName, style, color, initialstyle }: IconProps) => {
                     ${color ? color : ""}
                     text-xl ${initialstyle} 
             `}
+      onClick={onClick}
     ></i>
   );
 };

@@ -24,7 +24,10 @@
   @layer fa-solid;
 }
 .fadein {
-  animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.iconhoverbtn {
+  @apply h-full px-4 py-3 inline-flex items-center justify-center whitespace-nowrap rounded-md  font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground;
 }
 @keyframes fadeIn {
   0% {
@@ -36,4 +39,39 @@
 }
 .rightstyleinputs {
   @apply mb-2 bg-transparent border-divider focus-visible:ring-[none] placeholder:text-border;
+}
+
+::-webkit-scrollbar {
+  @apply w-2 border-l border-l-transparent  rounded-full;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-transparent rounded-full;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply border-l  bg-divider rounded-full py-80;
+}
+
+/*2 Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-background rounded-full;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  border-radius: 10px;
+}
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px hsl(216 8 16) inset !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px hsl(0 0 88%) inset !important; /* اینجا از رنگ تاریک‌تر استفاده شده */
 }

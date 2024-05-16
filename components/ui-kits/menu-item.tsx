@@ -7,7 +7,7 @@ import { Button } from "../ui/button";
 import Icon from "../ui/icon";
 import { MenuItemTypes } from "@/types/types";
 import Itemcounter from "../ui-customize/itemcounter";
-import { count } from "console";
+import { useState } from "react";
 
 //* components
 const MenuItem = ({
@@ -17,14 +17,20 @@ const MenuItem = ({
   additionalClasses,
   additionalstyles,
   number,
+  value,
 }: MenuItemTypes) => {
   const pathname = usePathname();
-
+  const [valuecolor, setvaluecolor] = useState("");
+  const valuehandler = (e: any) => {
+    setvaluecolor(e.target.value);
+  };
   return (
-    <Link href={href}>
+    <Link href={href || ""}>
       <div className=" flex items-center">
         <Button
           variant={number === 999 ? "foreground" : "ghost"}
+          value={valuecolor}
+          onClick={valuehandler}
           className={`w-full flex gap-2 fw-btn ${additionalstyles} ${
             pathname === href ? "bg-background" : ""
           }`}
@@ -37,7 +43,7 @@ const MenuItem = ({
           <span className="flex-1 text-start ">{label}</span>
           <Itemcounter
             count={number}
-            initialstyle={number === 0 || number === 999 ? "hidden" : ""}
+            initialstyle={number === -1 || number === 999 ? "hidden" : ""}
           />
         </Button>
       </div>

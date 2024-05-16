@@ -3,6 +3,7 @@ import "../FontAwesome.Pro.6.4.2/css/all.css";
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
 import { ThemeProvider } from "./provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({
@@ -29,6 +30,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

@@ -7,14 +7,14 @@ import { useTheme } from "@/app/provider";
 
 const ProfileMenuSection = () => {
   return (
-    <div className="flex items-center gap-2 ">
+    <div className="flex items-center gap-2 sm:gap-2 w-full">
       <Avatar className="flex">
         <AvatarImage src="https://github.com/shadcn.png" />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
       <div className={`flex flex-col `}>
         <Title title="John Madison" />
-        <Subtitle subtitle="Mr.JohnMadison@gmail.com" />
+        <Subtitle subtitle="Mr.JohnMadison@gma..." />
       </div>
     </div>
   );

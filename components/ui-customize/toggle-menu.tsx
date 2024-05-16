@@ -7,15 +7,14 @@ import TitleMenu from "./title";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 const MenuToggleBtn = ({ handleMenuToggle, additionalstyles }: any) => {
-
   return (
     <Button
       size="sm"
       variant="ghost"
       onClick={handleMenuToggle}
-      className={`m-auto ${additionalstyles}`}
+      className={`m-auto !px-0 !pb-4 h-[44px]  ${additionalstyles}`}
     >
-      <Icon iconName="bars" />
+      <Icon iconName="bars" initialstyle=" iconhoverbtn " />
     </Button>
   );
 };
