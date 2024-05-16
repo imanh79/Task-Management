@@ -68,11 +68,7 @@ const InputMain = () => {
 
   useEffect(() => {
     setvaluetime(timedate);
-  }, []);
-  interface List {
-    listname: string;
-    listcolor: string;
-  }
+  }, [timedate]);
 
   // const list: List[] = [
   //   { listname: "Personal", listcolor: "#DC143C" },
