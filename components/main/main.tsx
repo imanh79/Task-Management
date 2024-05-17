@@ -177,7 +177,7 @@ const Main = () => {
           )}
         </div>
       </div>
-      <div className="col-span-2 px-6 fixed bottom-4 w-[90%] left-1/2 transform -translate-x-1/2 z-10 ml-4">
+      <div className="col-span-2 px-6 fixed bottom-4 w-[90%] left-1/2 transform -translate-x-1/2 z-10 ml-10">
         <InputMain />
       </div>
     </div>
