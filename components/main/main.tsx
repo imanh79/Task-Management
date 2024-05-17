@@ -42,7 +42,7 @@ const Main = () => {
 
   return (
     <div
-      className={`grid grid-rows-[1fr,40%,40%,1fr] grid-cols-[auto,auto,1fr,auto]  overflow-clip  ${
+      className={`grid grid-rows-[1fr,40%,40%,8%] grid-cols-[auto,auto,1fr,auto] min-h-screen overflow-clip  ${
         toggleright ? " " : ""
       }`}
     >
@@ -126,7 +126,7 @@ const Main = () => {
           )}
         </div>
       </div>
-      <div className=" col-span-2 px-6 " onClick={handleClick}>
+      <div className=" col-span-2 px-6 mb-4" onClick={handleClick}>
         <Smtitle smtitle="Completed" additionalClasses="mb-2 " /> <hr />
         <div className="transform  duration-300 ease-in-out h-[80%] overflow-y-auto  mt-2 ">
           {todos.map(
@@ -174,7 +174,7 @@ const Main = () => {
           )}
         </div>
       </div>
-      <div className="col-span-2 px-6 ">
+      <div className="col-span-2 px-6  ">
         <InputMain />
       </div>
     </div>
