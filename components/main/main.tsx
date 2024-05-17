@@ -42,15 +42,18 @@ const Main = () => {
 
   return (
     <div
-      className={`grid grid-rows-[1fr,40%,40%,1fr] grid-cols-[auto,auto,1fr,auto] h-full overflow-clip  ${
+      className={`grid grid-rows-[1fr,40%,40%,1fr] grid-cols-[auto,auto,1fr,auto] h-full overflow-hidden ${
         toggleright ? " " : ""
       }`}
     >
-      <div className="col-span-1 row-span-4 bg-bgside" onClick={handleClick}>
+      <div
+        className="col-span-1 row-span-4 bg-bgside h-full overflow-hidden"
+        onClick={handleClick}
+      >
         {toggle ? <Navmobile /> : ""}
       </div>
       <div
-        className="col-span-2 px-5 w-full flex justify-start items-start"
+        className="col-span-2 px-5 w-full flex justify-start items-start overflow-hidden"
         onClick={handleClick}
       >
         <div className="flex justify-center items-baseline gap-2 pt-2">
@@ -62,9 +65,9 @@ const Main = () => {
       <div
         className={`col-span-1 row-span-4 h-full sm:h-auto transform duration-500 ease-in-out ${
           toggleright
-            ? "w-full h-full sm:h-auto sm:w-[300px] absolute sm:sticky  z-30 border-divider -right-[100%] duration-700 ease-in-out"
-            : "w-0  overflow-clip absolute  z-30 right-0 duration-700 ease-in-out"
-        } bg-bgside rounded-[10px] sm:my-4 sm:mr-4 `}
+            ? "w-full h-full sm:h-auto sm:w-[300px] absolute sm:sticky z-30 border-divider -right-[100%] duration-700 ease-in-out"
+            : "w-0 overflow-hidden absolute z-30 right-0 duration-700 ease-in-out"
+        } bg-bgside rounded-[10px] sm:my-4 sm:mr-4`}
         style={{ right: toggleright ? "0" : "-100%" }}
         onClick={handleClick}
       >
@@ -72,9 +75,7 @@ const Main = () => {
       </div>
 
       <div
-        className={`  ${
-          toggleright ? "col-span-2" : "col-span-2"
-        } px-6 h-full `}
+        className={`col-span-2 px-6 h-full overflow-hidden`}
         onClick={handleClick}
       >
         <Smtitle smtitle="In Progress" additionalClasses="mb-2" />
@@ -93,11 +94,11 @@ const Main = () => {
                       subtitle={item.title}
                       id={item.id}
                       additinalstyle="py-2 fadeIn"
-                    />{" "}
+                    />
                   </ContextMenuTrigger>
-                  <hr className=" border-divider border-[1px]" />
+                  <hr className="border-divider border-[1px]" />
                   {openContextMenuId === item.id && (
-                    <ContextMenuContent className=" bg-background border-divider overflow-clip">
+                    <ContextMenuContent className="bg-background border-divider overflow-hidden">
                       <ContextMenuItem
                         className="focus:bg-bgborder"
                         onClick={() => settoggleright(true)}
@@ -126,9 +127,13 @@ const Main = () => {
           )}
         </div>
       </div>
-      <div className=" col-span-2 px-6 " onClick={handleClick}>
-        <Smtitle smtitle="Completed" additionalClasses="mb-2 " /> <hr />
-        <div className="transform  duration-300 ease-in-out h-[80%] overflow-y-auto  mt-2 ">
+      <div
+        className="col-span-2 px-6 h-full overflow-hidden"
+        onClick={handleClick}
+      >
+        <Smtitle smtitle="Completed" additionalClasses="mb-2" />
+        <hr />
+        <div className="transform duration-300 ease-in-out h-[80%] overflow-y-auto mt-2">
           {todos.map(
             (item: any, id: number) =>
               item.done === true && (
@@ -146,9 +151,9 @@ const Main = () => {
                       } fadeIn py-2`}
                     />
                   </ContextMenuTrigger>
-                  <hr className=" border-divider border-[1px]" />
+                  <hr className="border-divider border-[1px]" />
                   {openContextMenuId === item.id && (
-                    <ContextMenuContent className=" bg-background border-divider overflow-clip">
+                    <ContextMenuContent className="bg-background border-divider overflow-hidden">
                       <ContextMenuItem className="focus:bg-bgborder">
                         Profile
                       </ContextMenuItem>
@@ -174,7 +179,7 @@ const Main = () => {
           )}
         </div>
       </div>
-      <div className="col-span-2 px-6 ">
+      <div className="col-span-2 px-6 overflow-hidden">
         <InputMain />
       </div>
     </div>
