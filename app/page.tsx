@@ -3,7 +3,7 @@ import Sidebar from "@/components/sidebars/sidebar";
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-[auto,1fr,1fr] min-h-screen overflow-hidden relative">
+    <div className="grid grid-cols-[auto,1fr,1fr] h-screen overflow-hidden relative">
       <section className="col-start-1 col-end-2 bg-bgside min-h-full">
         <Sidebar />
       </section>
