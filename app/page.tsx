@@ -9,7 +9,7 @@ export default function Home() {
       <section className="col-start-1 col-end-2 bg-bgside h-full">
         <Sidebar />
       </section>
-      <section className="col-start-2 col-end-4 h-screen overflow-clip">
+      <section className="col-start-2 col-end-4 min-h-screen overflow-clip">
         <Main />
       </section>
       <section className="col-start-4 col-end-6 overflow-clip"></section>
