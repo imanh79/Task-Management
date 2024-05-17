@@ -3,7 +3,9 @@ import Sidebar from "@/components/sidebars/sidebar";
 
 export default function Home() {
   return (
-    <div className={`grid grid-cols-[auto,1fr,1fr] overflow-clip relative h-full`}>
+    <div
+      className={`grid grid-cols-[auto,1fr,1fr] overflow-clip relative h-screen`}
+    >
       <section className="col-start-1 col-end-2 bg-bgside h-full">
         <Sidebar />
       </section>
