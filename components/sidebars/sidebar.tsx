@@ -106,7 +106,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={` transform  duration-500 ease-in-out overflow-clip  ${
+      className={` transform  duration-500 ease-in-out overflow-clip   ${
         toggle
           ? "w-0 overflow-hidden p-0"
           : "w-screen sm:w-[300px] p-2 pr-2 pl-4 overflow-clip "

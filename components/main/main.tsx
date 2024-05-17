@@ -42,11 +42,14 @@ const Main = () => {
 
   return (
     <div
-      className={`grid grid-rows-[1fr,40%,40%,1fr] grid-cols-[auto,auto,1fr,auto] h-screen overflow-clip  ${
+      className={`grid grid-rows-[1fr,40%,40%,1fr] grid-cols-[auto,auto,1fr,auto] h-screen   ${
         toggleright ? " " : ""
       }`}
     >
-      <div className="col-span-1 row-span-full bg-bgside " onClick={handleClick}>
+      <div
+        className="col-span-1 row-span-full bg-bgside h-screen"
+        onClick={handleClick}
+      >
         {toggle ? <Navmobile /> : ""}
       </div>
       <div
@@ -174,7 +177,7 @@ const Main = () => {
           )}
         </div>
       </div>
-      <div className="col-span-2 px-6  ">
+      <div className="col-span-2 px-6 fixed bottom-4 w-[90%] left-1/2 transform -translate-x-1/2 z-10 ml-4">
         <InputMain />
       </div>
     </div>

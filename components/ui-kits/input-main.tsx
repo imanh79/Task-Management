@@ -116,7 +116,7 @@ const InputMain = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 ">
-        <div className="relative flex items-center ">
+        <div className=" flex items-center relative   ">
           <FormField
             control={form.control}
             name="valueform"
@@ -124,7 +124,7 @@ const InputMain = () => {
               <FormItem className="w-full ">
                 <FormControl>
                   <Input
-                    className="h-[50px] w-full pl-14 focus-visible:ring-[none] border-bgborder "
+                    className="h-[50px] w-full pl-14 focus-visible:ring-[none] border-bgborder pr-0"
                     spellCheck={false}
                     {...field}
                     type="text"
@@ -137,7 +137,7 @@ const InputMain = () => {
           />
           <Button
             type="submit"
-            className="absolute left-1  !hover:bg-[none]  !hover:text-[none]  "
+            className="absolute left-[8px]  !hover:bg-[none]  !hover:text-[none]  "
             variant="ghost"
           >
             <Icon iconName="plus" />
