@@ -48,7 +48,10 @@ const Main = () => {
         toggle ? "pl-12" : ""
       }`}
     >
-      <div className="bg-bgside fixed bottom-0 left-0" onClick={handleClick}>
+      <div
+        className="bg-bgside fixed bottom-0 left-0 top-0"
+        onClick={handleClick}
+      >
         {toggle ? <Navmobile /> : ""}
       </div>
 
@@ -65,7 +68,7 @@ const Main = () => {
       <div
         className={`col-span-1 row-span-4 h-full sm:h-auto transform duration-500 ease-in-out ${
           toggleright
-            ? "w-full h-full sm:h-auto sm:w-[300px] absolute sm:sticky z-30 border-divider -right-[100%] duration-700 ease-in-out"
+            ? "w-full  h-full sm:w-[300px] fixed bottom-0 sm:sticky z-30 border-divider -right-[100%] duration-700 ease-in-out"
             : "w-0 overflow-hidden absolute z-30 right-0 duration-700 ease-in-out"
         } bg-bgside rounded-[10px] sm:my-4 sm:mr-4`}
         style={{ right: toggleright ? "0" : "-100%" }}
