@@ -109,7 +109,7 @@ const Sidebar = () => {
       className={` transform  duration-500 ease-in-out overflow-clip   ${
         toggle
           ? "w-0 overflow-hidden p-0"
-          : "w-screen sm:w-[300px] h-[735px]  p-2 pr-2 pl-4 overflow-clip "
+          : "w-screen sm:w-[300px] p-2 pr-2 pl-4 overflow-clip "
       }`}
     >
       <div className={`flex  w-full gap-4 items-center justify-between mr-2 `}>
@@ -144,7 +144,7 @@ const Sidebar = () => {
       <MenuItem href="./" label="Sticky Note" iconName="note" number={5} />
       <br />
       <Smtitle smtitle="Lists" />
-      <div className="h-[270px] overflow-y-auto">
+      <div className="h-[277px] overflow-y-auto">
         <div className="  ">
           {filterreal[0].map((item: any, index: any) => (
             <MenuItem
