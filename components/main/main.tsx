@@ -42,12 +42,12 @@ const Main = () => {
 
   return (
     <div
-      className={`grid  grid-cols-[auto,auto,1fr,auto] h-screen overflow-hidden ${
+      className={`grid  grid-cols-[auto,auto,1fr,auto] h-screen overflow-clip ${
         toggleright ? " " : ""
       }`}
     >
       <div
-        className="col-span-1 row-span-4 bg-bgside h-screen overflow-hidden"
+        className="col-span-1 row-span-4 bg-bgside h-[110vh] overflow-clip"
         onClick={handleClick}
       >
         {toggle ? <Navmobile /> : ""}
