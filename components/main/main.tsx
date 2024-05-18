@@ -42,12 +42,12 @@ const Main = () => {
 
   return (
     <div
-      className={`grid grid-rows-[15%,1fr,1fr,10%] grid-cols-[auto,auto,1fr,auto] h-screen overflow-hidden ${
+      className={`grid grid-rows-[10%,1fr,1fr,10%] grid-cols-[auto,auto,1fr,auto] h-[100vh] overflow-clip ${
         toggleright ? " " : ""
       }`}
     >
       <div
-        className="col-span-1 row-span-4 bg-bgside h-screen overflow-hidden"
+        className="col-span-1 row-span-4 bg-bgside h-screen overflow-clip"
         onClick={handleClick}
       >
         {toggle ? <Navmobile /> : ""}
@@ -179,7 +179,7 @@ const Main = () => {
           )}
         </div>
       </div>
-      <div className="col-span-2 row-span-4 px-6 overflow-hidden">
+      <div className="col-span-2 row-span-4 px-6 flex justify-start flex-col  overflow-clip">
         <InputMain />
       </div>
     </div>
