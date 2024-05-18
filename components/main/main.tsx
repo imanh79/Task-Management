@@ -41,9 +41,9 @@ const Main = () => {
   };
 
   return (
-    <div className={`relative flex  ${toggleright ? " " : ""}`}>
+    <div className={`relative flex ${toggleright ? " " : ""}`}>
       <div
-        className="col-span-1 row-span-4 bg-bgside h-full"
+        className=" bg-bgside h-full"
         onClick={handleClick}
       >
         {toggle ? <Navmobile /> : ""}
@@ -60,7 +60,7 @@ const Main = () => {
         </div>
 
         <div
-          className={`col-span-1 row-span-4 h-full sm:h-auto transform duration-500 ease-in-out ${
+          className={`col-span-1 row-span-4 h-full sm:h-auto absolute  transform duration-500 ease-in-out ${
             toggleright
               ? "w-full h-full sm:h-auto sm:w-[300px] absolute sm:sticky z-30 border-divider -right-[100%] duration-700 ease-in-out"
               : "w-0 overflow-hidden absolute z-30 right-0 duration-700 ease-in-out"

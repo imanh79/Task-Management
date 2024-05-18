@@ -33,7 +33,7 @@ const Navmobile = () => {
             <TooltipTrigger>
               <Icon
                 iconName="bars"
-                initialstyle="mt-2  w-[50px]  gap-0 iconhoverbtn !h-[65px]"
+                initialstyle="mt-2  w-[50px]  gap-0 iconhoverbtn "
                 onClick={handleMenuToggle}
               />{" "}
             </TooltipTrigger>{" "}
@@ -99,10 +99,11 @@ const Navmobile = () => {
           </TooltipContent>
         </Tooltip>
         <Tooltip>
-          <TooltipTrigger>
+          <TooltipTrigger className="pb-8">
             <Icon
               iconName="arrow-right-from-bracket"
-              initialstyle="mt-2  gap-0 iconhoverbtn"
+              initialstyle="mt-2 pb-8 gap-0 iconhoverbtn"
+              
             />{" "}
           </TooltipTrigger>
           <TooltipContent className="pb-4 absolute left-10 -bottom-[50px] !border-divider bg-background w-20">
