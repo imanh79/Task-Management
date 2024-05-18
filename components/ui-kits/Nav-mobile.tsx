@@ -26,14 +26,14 @@ const Navmobile = () => {
 
   const hovermenuhandler = (handleMenuToggle: any) => {};
   return (
-    <div className="flex flex-col items-center w-full bg-bgside h-auto  ">
+    <div className="flex flex-col items-center w-full bg-bgside h-full ">
       <TooltipProvider>
         <div onMouseMove={hovermenuhandler}>
           <Tooltip>
             <TooltipTrigger>
               <Icon
                 iconName="bars"
-                initialstyle="mt-2 w-[50px] h-[44px] gap-0 iconhoverbtn"
+                initialstyle="mt-2  w-[50px]  gap-0 iconhoverbtn !h-[69px]"
                 onClick={handleMenuToggle}
               />{" "}
             </TooltipTrigger>{" "}
@@ -44,7 +44,7 @@ const Navmobile = () => {
         </div>
         <Tooltip>
           <TooltipTrigger>
-            <Icon iconName="search" initialstyle=" gap-0 iconhoverbtn" />{" "}
+            <Icon iconName="search" initialstyle="mt-7 gap-0 iconhoverbtn" />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent className=" absolute left-10 top-9 !border-divider bg-background">
             <p>Search</p>
@@ -52,7 +52,7 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <Icon iconName="home" initialstyle=" gap-0 iconhoverbtn" />{" "}
+            <Icon iconName="home" initialstyle="mt-8 gap-0 iconhoverbtn" />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent className=" absolute left-10 top-10 !border-divider bg-background">
             <p>Home</p>
@@ -60,7 +60,7 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <Icon iconName="list" initialstyle=" gap-0  iconhoverbtn" />
+            <Icon iconName="list" initialstyle="mt-1 gap-0  iconhoverbtn" />
           </TooltipTrigger>{" "}
           <TooltipContent className=" absolute left-10 top-[13px] !border-divider bg-background">
             <p>List</p>
@@ -68,7 +68,7 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <Icon iconName="star" initialstyle=" gap-0 iconhoverbtn" />{" "}
+            <Icon iconName="star" initialstyle="mt-1 gap-0 iconhoverbtn" />{" "}
           </TooltipTrigger>
           <TooltipContent className=" absolute left-10 top-[13px] !border-divider bg-background">
             <p>Important</p>
@@ -76,7 +76,7 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <Icon iconName="note" initialstyle=" gap-0 iconhoverbtn" />{" "}
+            <Icon iconName="note" initialstyle="mt-1 gap-0 iconhoverbtn" />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent className=" absolute left-10 top-[13px] !border-divider bg-background">
             <p>Note</p>
@@ -84,7 +84,7 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <Icon iconName="plus" initialstyle="  gap-0 iconhoverbtn" />{" "}
+            <Icon iconName="plus" initialstyle="mt-20  gap-0 iconhoverbtn" />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent className=" absolute left-10 -bottom-[188px] !border-divider bg-background">
             <p>Add</p>
@@ -92,7 +92,7 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <NavModeToggle initialstyles=" " />
+            <NavModeToggle initialstyles="mt-24 " />
           </TooltipTrigger>
           <TooltipContent className="absolute left-10 top-[120px] !border-divider bg-background ">
             <p>Mode</p>
@@ -102,10 +102,10 @@ const Navmobile = () => {
           <TooltipTrigger>
             <Icon
               iconName="arrow-right-from-bracket"
-              initialstyle=" mt-[260px] pb-6  gap-0 iconhoverbtn"
+              initialstyle="mt-2  gap-0 iconhoverbtn"
             />{" "}
           </TooltipTrigger>
-          <TooltipContent className=" absolute left-10 -bottom-[50px] !border-divider bg-background w-20">
+          <TooltipContent className="pb-4 absolute left-10 -bottom-[50px] !border-divider bg-background w-20">
             <p>Sign out</p>
           </TooltipContent>
         </Tooltip>
