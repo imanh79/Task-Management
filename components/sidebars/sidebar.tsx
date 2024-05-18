@@ -144,7 +144,7 @@ const Sidebar = () => {
       <MenuItem href="./" label="Sticky Note" iconName="note" number={5} />
       <br />
       <Smtitle smtitle="Lists" />
-      <div className="h-[285px] overflow-y-auto">
+      <div className="h-[277px] overflow-y-auto">
         <div className="  ">
           {filterreal[0].map((item: any, index: any) => (
             <MenuItem
