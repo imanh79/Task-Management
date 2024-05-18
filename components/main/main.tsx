@@ -42,7 +42,7 @@ const Main = () => {
 
   return (
     <div
-      className={`grid grid-rows-[1fr,38%,38%,1fr] grid-cols-[auto,auto,1fr,auto] h-full overflow-clip  ${
+      className={`grid grid-rows-[10%,80%,20%,1fr] grid-cols-[auto,auto,1fr,auto] h-full overflow-clip  ${
         toggleright ? " " : ""
       }`}
     >
@@ -71,110 +71,108 @@ const Main = () => {
         <Rightside />
       </div>
 
-      <div
-        className={`  ${
-          toggleright ? "col-span-2" : "col-span-2"
-        } px-6 h-full `}
-        onClick={handleClick}
-      >
-        <Smtitle smtitle="In Progress" additionalClasses="mb-2" />
-        <hr />
-        <div className="h-[85%] w-full overflow-y-auto mt-2">
-          {todos.map(
-            (item: any, id: any) =>
-              !item.done &&
-              item.title !== "" && (
-                <ContextMenu key={id}>
-                  <ContextMenuTrigger
-                    key={item.id}
-                    onContextMenu={() => setOpenContextMenuId(item.id)}
-                  >
-                    <Listmain
-                      subtitle={item.title}
-                      id={item.id}
-                      additinalstyle="py-2 fadeIn"
-                    />{" "}
-                  </ContextMenuTrigger>
-                  <hr className=" border-divider border-[1px]" />
-                  {openContextMenuId === item.id && (
-                    <ContextMenuContent className=" bg-background border-divider overflow-clip">
-                      <ContextMenuItem
-                        className="focus:bg-bgborder"
-                        onClick={() => settoggleright(true)}
-                      >
-                        Edit
-                      </ContextMenuItem>
-                      <ContextMenuItem className="focus:bg-bgborder">
-                        Billing
-                      </ContextMenuItem>
-                      <ContextMenuItem className="focus:bg-bgborder">
-                        Team
-                      </ContextMenuItem>
-                      <ContextMenuItem
-                        className="text-[#DC143C] focus:text-[#DC143C] text-opacity-100 focus:bg-bgborder"
-                        onClick={() => {
-                          deletehandler(item.id);
-                          setOpenContextMenuId(null); // بستن منوی راست کلیک بعد از حذف آیتم
-                        }}
-                      >
-                        Delete
-                      </ContextMenuItem>
-                    </ContextMenuContent>
-                  )}
-                </ContextMenu>
-              )
-          )}
+      <div className={`col-span-2 px-6 h-full`} onClick={handleClick}>
+        <div className="h-[300px]">
+          <Smtitle smtitle="In Progress" additionalClasses="mb-2" />
+          <hr />
+          <div className="h-[85%] w-full overflow-y-auto mt-2">
+            {todos.map(
+              (item: any, id: any) =>
+                !item.done &&
+                item.title !== "" && (
+                  <ContextMenu key={id}>
+                    <ContextMenuTrigger
+                      key={item.id}
+                      onContextMenu={() => setOpenContextMenuId(item.id)}
+                    >
+                      <Listmain
+                        subtitle={item.title}
+                        id={item.id}
+                        additinalstyle="py-2 fadeIn"
+                      />{" "}
+                    </ContextMenuTrigger>
+                    <hr className=" border-divider border-[1px]" />
+                    {openContextMenuId === item.id && (
+                      <ContextMenuContent className=" bg-background border-divider overflow-clip">
+                        <ContextMenuItem
+                          className="focus:bg-bgborder"
+                          onClick={() => settoggleright(true)}
+                        >
+                          Edit
+                        </ContextMenuItem>
+                        <ContextMenuItem className="focus:bg-bgborder">
+                          Billing
+                        </ContextMenuItem>
+                        <ContextMenuItem className="focus:bg-bgborder">
+                          Team
+                        </ContextMenuItem>
+                        <ContextMenuItem
+                          className="text-[#DC143C] focus:text-[#DC143C] text-opacity-100 focus:bg-bgborder"
+                          onClick={() => {
+                            deletehandler(item.id);
+                            setOpenContextMenuId(null); // بستن منوی راست کلیک بعد از حذف آیتم
+                          }}
+                        >
+                          Delete
+                        </ContextMenuItem>
+                      </ContextMenuContent>
+                    )}
+                  </ContextMenu>
+                )
+            )}
+          </div>
+        </div>
+        <div className="h-[300px]">
+          <Smtitle smtitle="Completed" additionalClasses="mb-2 " />
+          <hr />
+          <div className="transform  duration-300 ease-in-out h-[80%] overflow-y-auto  mt-2 ">
+            {todos.map(
+              (item: any, id: number) =>
+                item.done === true && (
+                  <ContextMenu key={id}>
+                    <ContextMenuTrigger
+                      key={item.id}
+                      onContextMenu={() => setOpenContextMenuId(item.id)}
+                    >
+                      <Listmain
+                        subtitle={item.title}
+                        key={id}
+                        id={item.id}
+                        additinalstyle={`${
+                          item.done ? " block " : "hidden"
+                        } fadeIn py-2`}
+                      />
+                    </ContextMenuTrigger>
+                    <hr className=" border-divider border-[1px]" />
+                    {openContextMenuId === item.id && (
+                      <ContextMenuContent className=" bg-background border-divider overflow-clip">
+                        <ContextMenuItem className="focus:bg-bgborder">
+                          Profile
+                        </ContextMenuItem>
+                        <ContextMenuItem className="focus:bg-bgborder">
+                          Billing
+                        </ContextMenuItem>
+                        <ContextMenuItem className="focus:bg-bgborder">
+                          Team
+                        </ContextMenuItem>
+                        <ContextMenuItem
+                          className="text-[#DC143C] focus:text-[#DC143C] text-opacity-100 focus:bg-bgborder"
+                          onClick={() => {
+                            deletehandler(item.id);
+                            setOpenContextMenuId(null); // بستن منوی راست کلیک بعد از حذف آیتم
+                          }}
+                        >
+                          Delete
+                        </ContextMenuItem>
+                      </ContextMenuContent>
+                    )}
+                  </ContextMenu>
+                )
+            )}
+          </div>
         </div>
       </div>
-      <div className=" col-span-2 px-6 " onClick={handleClick}>
-        <Smtitle smtitle="Completed" additionalClasses="mb-2 " /> <hr />
-        <div className="transform  duration-300 ease-in-out h-[80%] overflow-y-auto  mt-2 ">
-          {todos.map(
-            (item: any, id: number) =>
-              item.done === true && (
-                <ContextMenu key={id}>
-                  <ContextMenuTrigger
-                    key={item.id}
-                    onContextMenu={() => setOpenContextMenuId(item.id)}
-                  >
-                    <Listmain
-                      subtitle={item.title}
-                      key={id}
-                      id={item.id}
-                      additinalstyle={`${
-                        item.done ? " block " : "hidden"
-                      } fadeIn py-2`}
-                    />
-                  </ContextMenuTrigger>
-                  <hr className=" border-divider border-[1px]" />
-                  {openContextMenuId === item.id && (
-                    <ContextMenuContent className=" bg-background border-divider overflow-clip">
-                      <ContextMenuItem className="focus:bg-bgborder">
-                        Profile
-                      </ContextMenuItem>
-                      <ContextMenuItem className="focus:bg-bgborder">
-                        Billing
-                      </ContextMenuItem>
-                      <ContextMenuItem className="focus:bg-bgborder">
-                        Team
-                      </ContextMenuItem>
-                      <ContextMenuItem
-                        className="text-[#DC143C] focus:text-[#DC143C] text-opacity-100 focus:bg-bgborder"
-                        onClick={() => {
-                          deletehandler(item.id);
-                          setOpenContextMenuId(null); // بستن منوی راست کلیک بعد از حذف آیتم
-                        }}
-                      >
-                        Delete
-                      </ContextMenuItem>
-                    </ContextMenuContent>
-                  )}
-                </ContextMenu>
-              )
-          )}
-        </div>
-      </div>
-      <div className="col-span-2 px-6  ">
+      <div className="col-span-3 px-6  ">
         <InputMain />
       </div>
     </div>
