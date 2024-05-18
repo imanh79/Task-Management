@@ -48,7 +48,7 @@ const Main = () => {
       style={{ maxWidth: "100%", overflow: "hidden" }}
     >
       <div
-        className="col-span-1 row-span-full bg-bgside  h-full fixed inset-0"
+        className="col-span-1 row-span-full bg-bgside h-full "
         onClick={handleClick}
       >
         {toggle ? <Navmobile /> : ""}

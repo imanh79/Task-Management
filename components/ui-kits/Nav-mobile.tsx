@@ -27,7 +27,7 @@ const Navmobile = () => {
   const hovermenuhandler = (handleMenuToggle: any) => {};
   return (
     <div
-      className="flex flex-col items-center w-full bg-bgside h-full  fixed inset-0 "
+      className="flex flex-col items-center w-full bg-bgside h-full  relative bottom-0 "
       style={{ maxWidth: "100%", overflow: "hidden" }}
     >
       <TooltipProvider>
