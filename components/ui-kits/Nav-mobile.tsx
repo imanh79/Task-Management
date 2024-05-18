@@ -26,14 +26,14 @@ const Navmobile = () => {
 
   const hovermenuhandler = (handleMenuToggle: any) => {};
   return (
-    <div className="flex flex-col items-center w-full bg-bgside  ">
+    <div className="flex flex-col items-center w-full bg-bgside ">
       <TooltipProvider>
         <div onMouseMove={hovermenuhandler}>
           <Tooltip>
             <TooltipTrigger>
               <Icon
                 iconName="bars"
-                initialstyle="mt-2  w-[50px]  gap-0 iconhoverbtn "
+                initialstyle="mt-2 w-[50px] h-[44px] gap-0 iconhoverbtn"
                 onClick={handleMenuToggle}
               />{" "}
             </TooltipTrigger>{" "}
@@ -84,7 +84,7 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <Icon iconName="plus" initialstyle="mt-24  gap-0 iconhoverbtn" />{" "}
+            <Icon iconName="plus" initialstyle="mt-14  gap-0 iconhoverbtn" />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent className=" absolute left-10 -bottom-[188px] !border-divider bg-background">
             <p>Add</p>
@@ -92,21 +92,20 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <NavModeToggle initialstyles="mt-14 " />
+            <NavModeToggle initialstyles="mt-28 " />
           </TooltipTrigger>
           <TooltipContent className="absolute left-10 top-[120px] !border-divider bg-background ">
             <p>Mode</p>
           </TooltipContent>
         </Tooltip>
         <Tooltip>
-          <TooltipTrigger className="pb-8">
+          <TooltipTrigger>
             <Icon
               iconName="arrow-right-from-bracket"
-              initialstyle="mt-2 pb-8 gap-0 iconhoverbtn"
-              
+              initialstyle="mt-2  gap-0 iconhoverbtn"
             />{" "}
           </TooltipTrigger>
-          <TooltipContent className="pb-4 absolute left-10 -bottom-[50px] !border-divider bg-background w-20">
+          <TooltipContent className=" absolute left-10 -bottom-[50px] !border-divider bg-background w-20">
             <p>Sign out</p>
           </TooltipContent>
         </Tooltip>
