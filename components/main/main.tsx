@@ -42,13 +42,12 @@ const Main = () => {
 
   return (
     <div
-      className={`grid grid-rows-[10%,35%,35%,8%] grid-cols-[auto,auto,1fr,auto] h-full overflow-hidden ${
+      className={`grid grid-rows-[1fr,40%,40%,1fr] grid-cols-[auto,auto,1fr,auto] h-full overflow-hidden ${
         toggleright ? " " : ""
       }`}
-      style={{ maxWidth: "100%", overflow: "hidden" }}
     >
       <div
-        className="col-span-1 row-span-full bg-bgside h-full"
+        className="col-span-1 row-span-4 bg-bgside  overflow-hidden"
         onClick={handleClick}
       >
         {toggle ? <Navmobile /> : ""}
@@ -180,7 +179,7 @@ const Main = () => {
           )}
         </div>
       </div>
-      <div className="col-span-2 px-6 overflow-hidden">
+      <div className="col-span-2 row-span-4 px-6 overflow-hidden">
         <InputMain />
       </div>
     </div>
