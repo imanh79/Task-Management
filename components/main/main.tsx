@@ -40,6 +40,7 @@ const Main = () => {
   };
   const handleClick = () => {
     setclosecalendar(false);
+    settoggle(true);
   };
 
   return (
@@ -48,10 +49,7 @@ const Main = () => {
         toggle ? "pl-12" : ""
       }`}
     >
-      <div
-        className="bg-bgside fixed bottom-0 left-0 top-0"
-        onClick={handleClick}
-      >
+      <div className="bg-bgside fixed bottom-0 left-0 top-0">
         {toggle ? <Navmobile /> : ""}
       </div>
 
