@@ -115,8 +115,11 @@ const InputMain = () => {
   const filterrepeat = filterreal[0].map((item: any) => item.listname);
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 ">
-        <div className="relative flex items-center mb-10 ">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="space-y-8 w-full "
+      >
+        <div className="relative flex items-center  ">
           <FormField
             control={form.control}
             name="valueform"

@@ -107,7 +107,7 @@ const Rightside = () => {
   const filterreal = filtertodo();
   console.log(filterreal);
   return (
-    <div className="pt-4 px-4">
+    <div className="pt-4 px-4 h-full">
       <div className=" flex justify-between items-center mb-2 ">
         <Title
           title="Task:"
