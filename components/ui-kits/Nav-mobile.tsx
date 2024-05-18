@@ -26,7 +26,7 @@ const Navmobile = () => {
 
   const hovermenuhandler = (handleMenuToggle: any) => {};
   return (
-    <div className="flex flex-col items-center w-full bg-bgside ">
+    <div className="flex flex-col items-center w-full bg-bgside h-[750px] ">
       <TooltipProvider>
         <div onMouseMove={hovermenuhandler}>
           <Tooltip>
@@ -84,7 +84,7 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <Icon iconName="plus" initialstyle="mt-14  gap-0 iconhoverbtn" />{" "}
+            <Icon iconName="plus" initialstyle="mt-10  gap-0 iconhoverbtn" />{" "}
           </TooltipTrigger>{" "}
           <TooltipContent className=" absolute left-10 -bottom-[188px] !border-divider bg-background">
             <p>Add</p>
@@ -99,10 +99,10 @@ const Navmobile = () => {
           </TooltipContent>
         </Tooltip>
         <Tooltip>
-          <TooltipTrigger>
+          <TooltipTrigger className="mb-6">
             <Icon
               iconName="arrow-right-from-bracket"
-              initialstyle="mt-2  gap-0 iconhoverbtn"
+              initialstyle="mt-2 pb-4 gap-0 iconhoverbtn"
             />{" "}
           </TooltipTrigger>
           <TooltipContent className=" absolute left-10 -bottom-[50px] !border-divider bg-background w-20">
