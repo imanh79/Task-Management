@@ -42,7 +42,7 @@ const Main = () => {
 
   return (
     <div
-      className={`grid grid-rows-[1fr,38%,38%,1fr] grid-cols-[auto,auto,1fr,auto] h-screen overflow-clip  ${
+      className={`grid grid-rows-[1fr,38%,38%,1fr] grid-cols-[auto,auto,1fr,auto] h-full overflow-clip  ${
         toggleright ? " " : ""
       }`}
     >
