@@ -174,7 +174,7 @@ const Main = () => {
           )}
         </div>
       </div>
-      <div className="col-span-2 px-6 ">
+      <div className="col-span-2 px-6  ">
         <InputMain />
       </div>
     </div>

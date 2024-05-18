@@ -92,7 +92,7 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <NavModeToggle initialstyles="mt-28 " />
+            <NavModeToggle initialstyles="mt-[146px] " />
           </TooltipTrigger>
           <TooltipContent className="absolute left-10 top-[120px] !border-divider bg-background ">
             <p>Mode</p>
