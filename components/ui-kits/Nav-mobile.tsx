@@ -26,7 +26,7 @@ const Navmobile = () => {
 
   const hovermenuhandler = (handleMenuToggle: any) => {};
   return (
-    <div className="flex flex-col items-center w-full bg-bgside h-[750px] ">
+    <div className="flex flex-col items-center w-full bg-bgside h-[753px] ">
       <TooltipProvider>
         <div onMouseMove={hovermenuhandler}>
           <Tooltip>
