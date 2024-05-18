@@ -48,8 +48,8 @@ const Main = () => {
       style={{ maxWidth: "100%", overflow: "hidden" }}
     >
       <div
-        className="col-span-1 row-span-full bg-bgside h-full "
-        onClick={handleClick}
+        className="col-span-1 row-span-full flex flex-col justify-between items-center w-full h-full relative"
+        style={{ maxWidth: "100%", overflow: "hidden" }}
       >
         {toggle ? <Navmobile /> : ""}
       </div>
