@@ -42,7 +42,7 @@ const Main = () => {
 
   return (
     <div
-      className={`grid grid-rows-[8%,41%,41%,1fr] grid-cols-[auto,auto,1fr,auto] h-screen overflow-clip  ${
+      className={`grid grid-rows-[1fr,40%,40%,1fr] grid-cols-[auto,auto,1fr,auto] h-screen overflow-clip  ${
         toggleright ? " " : ""
       }`}
     >
@@ -56,7 +56,7 @@ const Main = () => {
         className="col-span-2 px-5 w-full flex justify-start items-start"
         onClick={handleClick}
       >
-        <div className="flex justify-center items-baseline gap-2 pt-4">
+        <div className="flex justify-center items-baseline gap-2 pt-3">
           <Icon iconName="home" />
           <Title title="Tasks" additionalClasses="mt-2" />
         </div>
