@@ -42,7 +42,7 @@ const Main = () => {
 
   return (
     <div
-      className={`grid grid-rows-[10%,1fr,1fr,10%] grid-cols-[auto,auto,1fr,auto] h-[100vh] overflow-clip ${
+      className={`grid  grid-cols-[auto,auto,1fr,auto] h-screen overflow-clip ${
         toggleright ? " " : ""
       }`}
     >
@@ -53,7 +53,7 @@ const Main = () => {
         {toggle ? <Navmobile /> : ""}
       </div>
       <div
-        className="col-span-2 px-5 w-full flex justify-start items-start overflow-hidden"
+        className="col-span-2 px-5 w-full h-[100px] flex justify-start items-start overflow-hidden"
         onClick={handleClick}
       >
         <div className="flex justify-center items-baseline gap-2 pt-2">
@@ -75,7 +75,7 @@ const Main = () => {
       </div>
 
       <div
-        className={`col-span-2 px-6 h-full overflow-hidden`}
+        className={`col-span-2 px-6 h-[250px] overflow-hidden`}
         onClick={handleClick}
       >
         <Smtitle smtitle="In Progress" additionalClasses="mb-2" />
@@ -128,7 +128,7 @@ const Main = () => {
         </div>
       </div>
       <div
-        className="col-span-2 px-6 h-full overflow-hidden"
+        className="col-span-2 px-6 h-[320px] overflow-hidden"
         onClick={handleClick}
       >
         <Smtitle smtitle="Completed" additionalClasses="mb-2" />
