@@ -42,21 +42,18 @@ const Main = () => {
 
   return (
     <div
-      className={`grid grid-rows-[1fr,40%,40%,1fr] grid-cols-[auto,auto,1fr,auto] h-screen overflow-clip  ${
+      className={`grid grid-rows-[1fr,40%,40%,1fr] grid-cols-[auto,auto,1fr,auto] h-full sm:h-screen overflow-clip  ${
         toggleright ? " " : ""
       }`}
     >
-      <div
-        className="col-span-1 row-span-4 bg-bgside  h-[760px]"
-        onClick={handleClick}
-      >
+      <div className="col-span-1 row-span-4 bg-bgside" onClick={handleClick}>
         {toggle ? <Navmobile /> : ""}
       </div>
       <div
         className="col-span-2 px-5 w-full flex justify-start items-start"
         onClick={handleClick}
       >
-        <div className="flex justify-center items-baseline gap-2 pt-3">
+        <div className="flex justify-center items-baseline gap-2 pt-2">
           <Icon iconName="home" />
           <Title title="Tasks" additionalClasses="mt-2" />
         </div>
@@ -82,7 +79,7 @@ const Main = () => {
       >
         <Smtitle smtitle="In Progress" additionalClasses="mb-2" />
         <hr />
-        <div className="h-[85%] w-full overflow-y-scroll mt-2">
+        <div className="h-[85%] w-full overflow-y-auto mt-2">
           {todos.map(
             (item: any, id: any) =>
               !item.done &&
@@ -177,7 +174,7 @@ const Main = () => {
           )}
         </div>
       </div>
-      <div className="col-span-2 px-6 flex justify-start flex-col ">
+      <div className="col-span-2 px-6  ">
         <InputMain />
       </div>
     </div>
