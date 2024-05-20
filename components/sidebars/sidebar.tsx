@@ -28,7 +28,6 @@ import { useToast } from "../ui/use-toast";
 import { useLocation } from "react-router-dom";
 import { usePathname, useRouter } from "next/navigation";
 const Sidebar = () => {
-
   const pathname = usePathname();
   const { toast } = useToast();
   const { toggle, settoggle } = useTheme();

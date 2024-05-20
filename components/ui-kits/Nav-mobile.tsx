@@ -13,6 +13,7 @@ import {
 } from "../ui/tooltip";
 import Navtogglemenu from "../ui-customize/Navtoggle-menu";
 import { NavModeToggle } from "../ui-customize/Navdarkmode";
+import Link from "next/link";
 
 const Navmobile = () => {
   const { toggle, settoggle } = useTheme();
@@ -52,7 +53,10 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <Icon iconName="home" initialstyle="mt-8 gap-0 iconhoverbtn" />{" "}
+            <Link href="./">
+              {" "}
+              <Icon iconName="home" initialstyle="mt-8 gap-0 iconhoverbtn" />
+            </Link>{" "}
           </TooltipTrigger>{" "}
           <TooltipContent className=" absolute left-10 top-[44px] !border-divider bg-background">
             <p>Home</p>
@@ -60,7 +64,9 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <Icon iconName="list" initialstyle="mt-1 gap-0  iconhoverbtn" />
+            <Link href="./">
+              <Icon iconName="list" initialstyle="mt-1 gap-0  iconhoverbtn" />{" "}
+            </Link>{" "}
           </TooltipTrigger>{" "}
           <TooltipContent className=" absolute left-10 top-[15px] !border-divider bg-background">
             <p>List</p>
@@ -68,7 +74,9 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <Icon iconName="star" initialstyle="mt-1 gap-0 iconhoverbtn" />{" "}
+            <Link href="./important">
+              <Icon iconName="star" initialstyle="mt-1 gap-0 iconhoverbtn" />{" "}
+            </Link>{" "}
           </TooltipTrigger>
           <TooltipContent className=" absolute left-10 top-[15px] !border-divider bg-background">
             <p>Important</p>
@@ -76,7 +84,9 @@ const Navmobile = () => {
         </Tooltip>
         <Tooltip>
           <TooltipTrigger>
-            <Icon iconName="note" initialstyle="mt-1 gap-0 iconhoverbtn" />{" "}
+            <Link href="./stickynote">
+              <Icon iconName="note" initialstyle="mt-1 gap-0 iconhoverbtn" />{" "}
+            </Link>{" "}
           </TooltipTrigger>{" "}
           <TooltipContent className=" absolute left-10 top-[15px] !border-divider bg-background">
             <p>Note</p>
