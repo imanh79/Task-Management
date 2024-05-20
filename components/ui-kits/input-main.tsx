@@ -37,7 +37,8 @@ const InputMain = () => {
   const [valueselect, setvalueselect] = useState("");
   const { closecalendar, setclosecalendar } = useTheme();
   const { todos, setTodos } = useTheme();
-
+  const [borderselect, setborderselect] = useState(false);
+  const [bordervalue, setbordervalue] = useState(false);
   const dayOfMonth = date?.getDate();
 
   const formSchema = z.object({
@@ -89,15 +90,39 @@ const InputMain = () => {
     };
 
     const newValue = value.trim();
-    if (!newValue || isDuplicate(newValue) || !valueselect) {
+    if (!newValue) {
+      toast({
+        title: "Please enter a value!",
+      });
+      setbordervalue(true);
+      return;
+    } else {
+      setbordervalue(false);
+    }
+
+    if (isDuplicate(newValue)) {
+      toast({
+        title: "This value is duplicate!",
+      });
       return;
     }
-    addTodo(newTodo);
-    setvalue("");
+
+    if (!valueselect) {
+      toast({
+        title: "Please select a list!",
+      });
+      setborderselect(true);
+      return;
+    } else {
+      setborderselect(false);
+    }
+
     toast({
       title: "Task Added successfully!",
-      description: "Friday, February 10, 2023 at 5:57 PM",
     });
+
+    addTodo(newTodo);
+    setvalue("");
   };
   const handleInputClick = () => {
     setclosecalendar(!closecalendar);
@@ -127,7 +152,11 @@ const InputMain = () => {
               <FormItem className="w-full ">
                 <FormControl>
                   <Input
-                    className="h-[50px] w-full pl-14 focus-visible:ring-[none] border-bgborder "
+                    className={`h-[50px] w-full pl-14 focus-visible:ring-[none] border-bgborder ${
+                      bordervalue
+                        ? "border-[2px] border-[#DC143C]"
+                        : "border-bgborder"
+                    } `}
                     spellCheck={false}
                     {...field}
                     type="text"
@@ -167,14 +196,18 @@ const InputMain = () => {
             ""
           )}
           <Select onValueChange={selecthandler}>
-            <SelectTrigger className="w-[46px] px-6 absolute right-[50px] sm:right-16 border-[0px] gap-2 bg-[tranparent]   hover:bg-bgborder hover:text-accent-foreground">
+            <SelectTrigger
+              className={`w-[46px] px-6 absolute right-[50px] sm:right-16 ${
+                borderselect ? "border-[2px] border-[#DC143C]" : "border-[0px]"
+              } gap-2 bg-[tranparent]   hover:bg-bgborder hover:text-accent-foreground`}
+            >
               <SelectValue />
               <div className="relative flex justify-center items-center ring-[none]">
                 <Icon iconName="list" initialstyle=" absolute -left-[18px]" />
               </div>
               &nbsp;
             </SelectTrigger>
-            <SelectContent className="border-divider bg-background relative right-[100px] ">
+            <SelectContent className="border-divider bg-background relative right-[100px]  ">
               <SelectGroup>
                 <SelectLabel>Lists </SelectLabel>
                 {filterreal[0].map((item: any, index: any) => (

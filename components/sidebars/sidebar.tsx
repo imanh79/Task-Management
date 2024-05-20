@@ -23,10 +23,13 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Listmenubutton from "../ui-kits/list-menu-button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useToast } from "../ui/use-toast";
-
+import { useLocation } from "react-router-dom";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 const Sidebar = () => {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
   const { toast } = useToast();
   const { toggle, settoggle } = useTheme();
   const { todos, setTodos } = useTheme();
@@ -34,6 +37,14 @@ const Sidebar = () => {
   const [closedialog, setclosedialog] = useState(false);
   const [valuecolor, setvaluecolor] = useState("");
   const importantfilter = todos.filter((item) => item.important === true);
+
+
+  useEffect(() => {
+    if (pathname) {
+      settoggle(true);
+    }
+  }, [pathname]);
+
 
   const handleMenuToggle = () => {
     settoggle(!toggle);
@@ -83,7 +94,6 @@ const Sidebar = () => {
       setvaluecolor("");
       toast({
         title: "List Added successfully!",
-        description: "Friday, February 10, 2023 at 5:57 PM",
       });
     }
   };
@@ -106,9 +116,9 @@ const Sidebar = () => {
 
   return (
     <div
-    className={`transform bg-bgside duration-500 ease-in-out overflow-clip z-30 fixed top-0 bottom-0 ${
-      toggle ? "-translate-x-full" : "translate-x-0"
-    }  sm:w-[300px] p-2 pr-2 pl-4`}
+      className={`transform bg-bgside duration-500 ease-in-out overflow-clip z-30 fixed top-0 bottom-0 ${
+        toggle ? "-translate-x-full" : "translate-x-0"
+      }  sm:w-[300px] p-2 pr-2 pl-4`}
     >
       <div className={`flex  w-full gap-4 items-center justify-between mr-2 `}>
         <ProfileMenuSection />
@@ -117,7 +127,7 @@ const Sidebar = () => {
         ) : (
           <Icon
             iconName="bars"
-            initialstyle="  w-[50px] h-[44px] iconhoverbtn"
+            initialstyle="  iconhoverbtn"
             onClick={handleMenuToggle}
           />
         )}
@@ -139,10 +149,15 @@ const Sidebar = () => {
         iconName="star"
         number={importantfilter.length}
       />
-      <MenuItem href="./" label="Sticky Note" iconName="note" number={5} />
+      <MenuItem
+        href="./stickynote"
+        label="Sticky Note"
+        iconName="note"
+        number={5}
+      />
       <br />
       <Smtitle smtitle="Lists" />
-      <div className="h-[277px] overflow-y-auto">
+      <div className="h-[285px] overflow-y-auto">
         <div className="  ">
           {filterreal[0].map((item: any, index: any) => (
             <MenuItem

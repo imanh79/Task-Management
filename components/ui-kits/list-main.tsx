@@ -5,8 +5,10 @@ import { Button } from "../ui/button";
 import Icon from "../ui/icon";
 import { useTheme } from "@/app/provider";
 import { TaskTodo } from "@/types/types";
+import { useToast } from "../ui/use-toast";
 
 const Listmain = ({ subtitle, id, additinalstyle }: any) => {
+  const { toast } = useToast();
   const { togglestar, settogglestar } = useTheme();
   const { toggleright, settoggleright } = useTheme();
   const [data, setdata] = useState("");
@@ -30,7 +32,16 @@ const Listmain = ({ subtitle, id, additinalstyle }: any) => {
           : todo
       )
     );
+
+    // Check if the task with the given id is now marked as done
+    const updatedTodo = todos.find((todo) => todo.id === id);
+    if (updatedTodo && !updatedTodo.done) {
+      toast({
+        title: "Your task was successfully done!",
+      });
+    }
   };
+
   const handleToggleStar = () => {
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
@@ -97,7 +108,6 @@ const Listmain = ({ subtitle, id, additinalstyle }: any) => {
       } my-0.5  duration-500 hover:transition-all hover:duration-500 ease-in-out hover:bg-bgside hover:text-accent-foreground  rounded-[6px] overflow-clip fadein  ${additinalstyle} `}
       onMouseMove={inheverhandler}
       onMouseLeave={outhoverhandler}
-      onClick={infofunction}
     >
       <div className="flex justify-between items-center">
         <div
@@ -130,11 +140,14 @@ const Listmain = ({ subtitle, id, additinalstyle }: any) => {
               />
             </Button>
           </div>
-          <div className="flex justify-start items-start   relative w-full">
+          <div
+            className="flex justify-start items-center h-[40px]  relative w-full "
+            onClick={infofunction}
+          >
             <div>
               {todos.find((todo) => todo.id === id)?.done ? (
                 <del>
-                  <Subtitle subtitle={subtitle} />
+                  <Subtitle subtitle={subtitle} additionalClasses="" />
                 </del>
               ) : (
                 <Subtitle

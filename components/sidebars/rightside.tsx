@@ -19,6 +19,7 @@ import { toast, useToast } from "../ui/use-toast";
 
 const Rightside = () => {
   const { toast } = useToast();
+  const { toggle, settoggle } = useTheme();
   const [togglesquare, settogglesquare] = useState(false);
   const { tasktodo, settasktodo } = useTheme();
   const [title, setTitle] = useState("");
@@ -30,7 +31,7 @@ const Rightside = () => {
   console.log(toggleright);
   const { todos, setTodos } = useTheme();
   const Rightsidecloser = () => {
-    settoggleright(!toggleright);
+    settoggleright(false);
   };
   const togglesquarehandler = () => {
     settogglesquare(!togglesquare);
@@ -60,7 +61,6 @@ const Rightside = () => {
     console.log(tasktodo);
     toast({
       title: "Changes made successfully!",
-      description: "Friday, February 10, 2023 at 5:57 PM",
     });
   };
   const deletehandler = () => {
@@ -74,7 +74,6 @@ const Rightside = () => {
     toast({
       variant: "destructive",
       title: "Task Deleted successfully!",
-      description: "Friday, February 10, 2023 at 5:57 PM",
     });
   };
   useEffect(() => {
@@ -190,7 +189,7 @@ const Rightside = () => {
       <div onClick={togglesquarehandler}>
         <MenuItem
           href="./"
-          label="Call to batman 🦇"
+          label="Subtask"
           iconName=""
           additionalClasses={`${
             togglesquare ? "solid fa-square-check" : "regular fa-square"

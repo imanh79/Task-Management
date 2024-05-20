@@ -1,5 +1,5 @@
 {
-  "name": "todo-app-pro",
+  "name": "taskmanagement",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -32,6 +32,7 @@
     "react-day-picker": "^8.10.1",
     "react-dom": "^18",
     "react-hook-form": "^7.51.3",
+    "react-router-dom": "^6.23.1",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.3"
