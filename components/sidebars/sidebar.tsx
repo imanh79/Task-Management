@@ -26,9 +26,9 @@ import Listmenubutton from "../ui-kits/list-menu-button";
 import { useEffect, useState } from "react";
 import { useToast } from "../ui/use-toast";
 import { useLocation } from "react-router-dom";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 const Sidebar = () => {
-  const searchParams = useSearchParams();
+
   const pathname = usePathname();
   const { toast } = useToast();
   const { toggle, settoggle } = useTheme();
