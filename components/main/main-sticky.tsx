@@ -57,6 +57,25 @@ const Mainsticky = () => {
       </div>
 
       <div
+        className="col-span-3 pb-12 px-5 w-full flex justify-start items-start"
+        onClick={handleClick}
+      ></div>
+      <div
+        className={`col-span-1 row-span-4 h-full sm:h-auto transform duration-500 ease-in-out ${
+          toggleright
+            ? "w-full  h-full sm:w-[300px] fixed bottom-0 sm:sticky z-30 border-divider -right-[100%] duration-700 ease-in-out"
+            : "w-0 overflow-hidden absolute z-30 right-0 duration-700 ease-in-out"
+        } bg-bgside rounded-[10px] sm:my-4 sm:mr-4`}
+        style={{ right: toggleright ? "0" : "-100%" }}
+        onClick={handleClickright}
+      >
+        <Rightside />
+      </div>
+      <div
+        className={`  col-span-2 px-6 h-full overflow-auto row-span-4 `}
+        onClick={handleClick}
+      ></div>
+      <div
         className={`  ${
           toggleright ? "col-span-2" : "col-span-2"
         } px-6 h-full `}
