@@ -35,7 +35,6 @@ const Main = () => {
     toast({
       variant: "destructive",
       title: "Task Deleted successfully!",
-  
     });
   };
   const handleClick = () => {
@@ -44,7 +43,6 @@ const Main = () => {
   };
   const handleClickright = () => {
     setclosecalendar(false);
-
   };
   return (
     <div

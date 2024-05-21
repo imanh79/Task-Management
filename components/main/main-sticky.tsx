@@ -1,5 +1,4 @@
-
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { useTheme } from "@/app/provider";
 
@@ -35,32 +34,28 @@ const Mainsticky = () => {
   const handleClick = () => {
     setclosecalendar(false);
   };
+  const handleClickright = () => {
+    setclosecalendar(false);
+  };
   const importantfilter = todos.filter((item) => item.important === true);
   return (
-    <div className="grid grid-rows-[1fr,40%,40%,1fr] grid-cols-[auto,auto,1fr,auto] h-full  ">
-      <div className="col-span-1 row-span-4 bg-bgside" onClick={handleClick}>
+    <div className="grid grid-rows-[auto,auto,auto,1fr,auto] grid-cols-[1fr,auto,auto,auto] h-full relative overflow-clip pl-12 ">
+      <div
+        className="bg-bgside fixed bottom-0 left-0 top-0 z-20"
+        onClick={handleClick}
+      >
         {toggle ? <Navmobile /> : ""}
       </div>
       <div
-        className="col-span-2 px-5 w-full flex justify-start items-start flex-col"
+        className="col-span-3 pb-12 px-5 w-full flex justify-start items-start"
         onClick={handleClick}
       >
-        <div className="flex justify-center items-baseline gap-2 pt-2">
+        <div className="flex justify-center items-baseline gap-2 pt-3">
           <Icon iconName="note" initialstyle="" />
-          <Title title="Sticky Note" additionalClasses="mt-2" />
+          <Title title="sticky" additionalClasses="mt-2" />
         </div>
       </div>
-      <div
-        className={`col-span-1 row-span-4 transform  duration-300 ease-in-out hidden md:block ${
-          toggleright
-            ? " opacity-100 w-[300px] overflow-clip"
-            : "w-0 opacity-0 overflow-hidden "
-        } bg-bgside rounded-[10px]  my-4 mr-4`}
-        onClick={handleClick}
-      >
-        <Rightside />
-      </div>
-   
+
       <div
         className={`  ${
           toggleright ? "col-span-2" : "col-span-2"
