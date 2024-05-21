@@ -6,11 +6,11 @@ import React from "react";
 
 const Important = () => {
   return (
-    <div className="grid grid-cols-[auto,1fr,1fr]  overflow-clip relative ">
-      <section className="col-start-1 col-end-2 bg-bgside">
-        <Sidebar />
-      </section>
-      <section className="col-start-2 col-end-4 overflow-clip ">
+    <div className={`grid grid-cols-[auto,1fr,1fr]  relative  overflow-clip`}>
+    <section className="col-start-1 col-end-2    ">
+      <Sidebar />
+    </section>
+    <section className="col-start-2 col-end-4    overflow-clip">
         <Mainsticky />
       </section>
       <section className="col-start-4 col-end-6"></section>
