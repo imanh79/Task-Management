@@ -5,7 +5,7 @@ import React from "react";
 
 const Important = () => {
   return (
-    <div className="grid grid-cols-[auto,1fr,1fr] h-screen overflow-clip relative ">
+    <div className="grid grid-cols-[auto,1fr,1fr]  overflow-clip relative ">
       <section className="col-start-1 col-end-2 bg-bgside">
         <Sidebar />
       </section>
