@@ -27,7 +27,7 @@ const list: List[] = [
 ];
 export const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
   // toggle menu
-  const [toggle, settoggle] = useState(true);
+  const [toggle, settoggle] = useState(false);
   // toggle star
   const [togglestar, settogglestar] = useState(true);
   // toggle right side menu

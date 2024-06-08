@@ -39,14 +39,16 @@ const Main = () => {
   };
   const handleClick = () => {
     setclosecalendar(false);
-    settoggle(true);
+    // settoggle(true);
   };
   const handleClickright = () => {
     setclosecalendar(false);
   };
   return (
     <div
-      className={`grid grid-rows-[auto,auto,auto,1fr,auto] grid-cols-[1fr,auto,auto,auto] h-full relative overflow-clip pl-12`}
+      className={`grid grid-rows-[auto,auto,auto,1fr,auto] grid-cols-[1fr,auto,auto,auto] h-full relative overflow-clip pl-12 ${
+        !toggle ? "pl-[290px]" : "pl-12"
+      }`}
     >
       <div className="bg-bgside fixed bottom-0 left-0 top-0 z-20">
         {toggle ? <Navmobile /> : ""}

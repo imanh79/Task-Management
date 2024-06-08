@@ -29,7 +29,7 @@ const MainImportant = () => {
     const updatedTodos = todos.filter((item) => item.id !== id);
     setTodos(updatedTodos);
 
-    console.log(tasktodo);
+  
   };
   const handleClick = () => {
     setclosecalendar(false);

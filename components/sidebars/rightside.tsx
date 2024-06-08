@@ -26,9 +26,9 @@ const Rightside = () => {
   const [description, setdescription] = useState("");
   const [data, setdata] = useState("");
   const [list, setlist] = useState("");
-  console.log(tasktodo);
+
   const { toggleright, settoggleright } = useTheme();
-  console.log(toggleright);
+
   const { todos, setTodos } = useTheme();
   const Rightsidecloser = () => {
     settoggleright(false);
@@ -57,8 +57,7 @@ const Rightside = () => {
       )
     );
     settoggleright(false);
-    console.log(todos);
-    console.log(tasktodo);
+
     toast({
       title: "Changes made successfully!",
     });
@@ -84,7 +83,7 @@ const Rightside = () => {
       setlist(tasktodo[4]?.selectlistname || "");
     }
   }, [toggleright, tasktodo]);
-  console.log(todos);
+
   const valuehandlertitle = (e: any) => {
     setTitle(e.target.value);
   };
@@ -96,7 +95,6 @@ const Rightside = () => {
   };
   const valuehandlerlist = (e: any) => {
     setlist(e);
-    console.log(e);
   };
   const filtertodo = () => {
     let map1 = todos.map((item: any) => item.list);
@@ -104,7 +102,7 @@ const Rightside = () => {
     return map2;
   };
   const filterreal = filtertodo();
-  console.log(filterreal);
+
   return (
     <div className="pt-4 px-4 h-full">
       <div className=" flex justify-between items-center mb-2 ">
