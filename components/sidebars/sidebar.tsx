@@ -37,13 +37,11 @@ const Sidebar = () => {
   const [valuecolor, setvaluecolor] = useState("");
   const importantfilter = todos.filter((item) => item.important === true);
 
-
   useEffect(() => {
     if (pathname) {
       // settoggle(true);
     }
   }, [pathname]);
-
 
   const handleMenuToggle = () => {
     settoggle(!toggle);
@@ -116,8 +114,8 @@ const Sidebar = () => {
   return (
     <div
       className={`transform bg-bgside w-screen duration-500 ease-in-out overflow-clip z-30 fixed top-0 bottom-0 ${
-        toggle ? "-translate-x-full" : "translate-x-0"
-      }  sm:w-[300px] p-2 pr-2 pl-4`}
+        toggle ? "-translate-x-full " : "translate-x-0 "
+      }  sm:w-[300px] p-2 pr-2 pl-4 `}
     >
       <div className={`flex  w-full gap-4 items-center justify-between mr-2 `}>
         <ProfileMenuSection />

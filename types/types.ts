@@ -3,7 +3,7 @@ export type IconProps = {
   iconName: string;
   color?: string;
   initialstyle?: string;
-  onClick?:any;
+  onClick?: any;
 };
 
 export type TitleProps = {
@@ -65,7 +65,7 @@ export type TodoWithDefaults = {
 export type TaskTodo = {
   tasktitle?: any;
   description?: string;
-  date?: Date | string |undefined;
+  date?: Date | string | undefined;
   status?: string;
   prevTaskTodos?: any;
   selectlistcolor?: any;
@@ -79,6 +79,8 @@ export type ThemeContextType = {
   todos: Todo[];
   tasktodo: TaskTodo[];
   togglestar: boolean;
+  togglem: boolean;
+  settogglem: React.Dispatch<React.SetStateAction<boolean>>;
   settasktodo: React.Dispatch<React.SetStateAction<TaskTodo[]>>;
   settogglestar: React.Dispatch<React.SetStateAction<boolean>>;
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;

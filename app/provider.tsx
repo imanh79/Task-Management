@@ -2,8 +2,7 @@
 import * as React from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { type ThemeProviderProps } from "next-themes/dist/types";
-
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { TaskTodo, ThemeContextType, Todo } from "@/types/types";
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -15,26 +14,31 @@ export const useTheme = () => {
   }
   return context;
 };
+
 interface List {
   listname: string;
   listcolor: string;
   listid: number;
 }
+
 const list: List[] = [
   { listname: "Personal", listcolor: "#DC143C", listid: 1 },
   { listname: "Work", listcolor: "#87CEEB", listid: 2 },
   { listname: "Untitled List", listcolor: "#FDCA40", listid: 3 },
 ];
+
 export const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
-  // toggle menu
-  const [toggle, settoggle] = useState(false);
-  // toggle star
+  // Initialize toggle to false initially
+  const [toggle, settoggle] = useState(true);
+  const [togglem, settogglem] = useState(false);
+
+  // Toggle star
   const [togglestar, settogglestar] = useState(true);
-  // toggle right side menu
+  // Toggle right side menu
   const [toggleright, settoggleright] = useState(false);
-  // for open/close clendar
+  // For open/close calendar
   const [closecalendar, setclosecalendar] = useState(false);
-  // data todos
+  // Data todos
   const [todos, setTodos] = useState<Todo[]>([
     {
       id: 0,
@@ -48,6 +52,23 @@ export const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
   ]);
   // Task todos
   const [tasktodo, settasktodo] = useState<TaskTodo[]>([]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 640) {
+        settoggle(true);
+      } else {
+        settoggle(false);
+      }
+    };
+
+    // Set the initial value based on the window width
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <ThemeContext.Provider
       value={{
@@ -55,6 +76,8 @@ export const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
         settasktodo,
         toggle,
         togglestar,
+        togglem,
+        settogglem,
         settogglestar,
         settoggle,
         closecalendar,
