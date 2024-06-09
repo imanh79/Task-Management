@@ -207,7 +207,7 @@ const InputMain = () => {
               </div>
               &nbsp;
             </SelectTrigger>
-            <SelectContent className="border-divider bg-background relative right-[100px]  ">
+            <SelectContent className="border-divider bg-background relative right-[70px]  ">
               <SelectGroup>
                 <SelectLabel>Lists </SelectLabel>
                 {filterreal[0].map((item: any, index: any) => (

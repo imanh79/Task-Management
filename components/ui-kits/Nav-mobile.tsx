@@ -16,12 +16,13 @@ import { NavModeToggle } from "../ui-customize/Navdarkmode";
 import Link from "next/link";
 
 const Navmobile = () => {
-  const { toggle, settoggle } = useTheme();
+  const { toggle, settoggle, togglem, settogglem } = useTheme();
   const [value, setvalue] = useState(false);
   const onMouseMove = () => {
     setvalue(true);
   };
   const handleMenuToggle = () => {
+    settogglem(!togglem);
     settoggle(!toggle);
   };
 

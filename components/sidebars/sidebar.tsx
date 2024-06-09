@@ -30,7 +30,7 @@ import { usePathname, useRouter } from "next/navigation";
 const Sidebar = () => {
   const pathname = usePathname();
   const { toast } = useToast();
-  const { toggle, settoggle } = useTheme();
+  const { toggle, settoggle, togglem, settogglem } = useTheme();
   const { todos, setTodos } = useTheme();
   const [value, setvalue] = useState("");
   const [closedialog, setclosedialog] = useState(false);
@@ -44,9 +44,9 @@ const Sidebar = () => {
   }, [pathname]);
 
   const handleMenuToggle = () => {
-    settoggle(!toggle);
+    settogglem(!togglem);
   };
-
+  console.log(togglem);
   const onSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
     setvalue(event.target.value);
   };
@@ -113,21 +113,20 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`transform bg-bgside w-screen duration-500 ease-in-out overflow-clip z-30 fixed top-0 bottom-0 ${
-        toggle ? "-translate-x-full " : "translate-x-0 "
+      className={`transform bg-bgside left-[-20rem] sm:left-[unset]  duration-700 ease-in-out overflow-clip z-30 fixed top-0 bottom-0  ${
+        !togglem
+          ? " translate-x-0 left-0 "
+          : " -translate-x-full  left-full w-screen sm:left-[unset]"
       }  sm:w-[300px] p-2 pr-2 pl-4 `}
     >
       <div className={`flex  w-full gap-4 items-center justify-between mr-2 `}>
         <ProfileMenuSection />
-        {toggle ? (
-          ""
-        ) : (
-          <Icon
-            iconName="bars"
-            initialstyle="  iconhoverbtn"
-            onClick={handleMenuToggle}
-          />
-        )}
+
+        <Icon
+          iconName="bars"
+          initialstyle="  iconhoverbtn"
+          onClick={handleMenuToggle}
+        />
       </div>
       <br />
       <Inputprofile />

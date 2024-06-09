@@ -56,9 +56,8 @@ export const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 640) {
-        settoggle(true);
+        // settogglem(true);
       } else {
-        settoggle(false);
       }
     };
 
