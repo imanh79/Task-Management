@@ -6,7 +6,7 @@ import Icon from "../ui/icon";
 import { useTheme } from "@/app/provider";
 import { TaskTodo } from "@/types/types";
 import { useToast } from "../ui/use-toast";
-
+import Cookie from "cookie-universal";
 const Listmain = ({ subtitle, id, additinalstyle }: any) => {
   const { toast } = useToast();
   const { togglestar, settogglestar } = useTheme();
@@ -15,6 +15,7 @@ const Listmain = ({ subtitle, id, additinalstyle }: any) => {
   const { todos, setTodos } = useTheme();
   const { tasktodo, settasktodo } = useTheme();
   const [hoverlist, sethoverlist] = useState(false);
+  const cookies = Cookie();
   const inheverhandler = () => {
     sethoverlist(true);
   };
@@ -22,18 +23,19 @@ const Listmain = ({ subtitle, id, additinalstyle }: any) => {
     sethoverlist(false);
   };
   const handlecheckbox = () => {
-    setTodos((prevTodos) =>
-      prevTodos.map((todo) =>
+    setTodos((prevTodos) => {
+      const updatedTodos = prevTodos.map((todo) =>
         todo.id === id
           ? {
               ...todo,
               done: !todo.done,
             }
           : todo
-      )
-    );
+      );
+      cookies.set("todos", updatedTodos, { path: "/" });
+      return updatedTodos;
+    });
 
-    // Check if the task with the given id is now marked as done
     const updatedTodo = todos.find((todo) => todo.id === id);
     if (updatedTodo && !updatedTodo.done) {
       toast({
@@ -43,16 +45,18 @@ const Listmain = ({ subtitle, id, additinalstyle }: any) => {
   };
 
   const handleToggleStar = () => {
-    setTodos((prevTodos) =>
-      prevTodos.map((todo) =>
+    setTodos((prevTodos) => {
+      const updatedTodos = prevTodos.map((todo) =>
         todo.id === id
           ? {
               ...todo,
               important: !todo.important,
             }
           : todo
-      )
-    );
+      );
+      cookies.set("todos", updatedTodos, { path: "/" });
+      return updatedTodos;
+    });
   };
 
   const inputhandler = (event: any) => {

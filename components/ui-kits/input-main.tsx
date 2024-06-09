@@ -29,6 +29,7 @@ import { useForm } from "react-hook-form";
 import { Todo } from "@/types/types";
 import Listmenubutton from "./list-menu-button";
 import { Toast, ToastAction } from "../ui/toast";
+import Cookie from "cookie-universal";
 const InputMain = () => {
   const { toast } = useToast();
   const [date, setDate] = React.useState<Date | undefined>(new Date());
@@ -40,6 +41,8 @@ const InputMain = () => {
   const [borderselect, setborderselect] = useState(false);
   const [bordervalue, setbordervalue] = useState(false);
   const dayOfMonth = date?.getDate();
+
+  // بارگذاری todos از Local Storage
 
   const formSchema = z.object({
     valueform: z.string({
@@ -53,9 +56,19 @@ const InputMain = () => {
     },
   });
   const addTodo = (newTodo: any) => {
-    setTodos([...todos, { ...newTodo }]);
+    const updatedTodos = [...todos, { ...newTodo }];
+    setTodos(updatedTodos);
+    // ذخیره todos در کوکی
+    const cookies = Cookie();
+    cookies.set("todos", updatedTodos, { path: "/" });
   };
-
+  useEffect(() => {
+    const cookies = Cookie();
+    const storedTodos = cookies.get("todos");
+    if (storedTodos) {
+      setTodos(storedTodos);
+    }
+  }, []);
   const isDuplicate = (newValue: any) => {
     return todos.some((todo) => todo.title === newValue);
   };
@@ -66,10 +79,6 @@ const InputMain = () => {
   const minutes = date?.getMinutes(); // its ready to use
   const seconds = date?.getSeconds(); // its ready to use
   const timedate = `${day}/${month}/${year}`;
-
-  useEffect(() => {
-    setvaluetime(timedate);
-  }, [timedate]);
 
   // const list: List[] = [
   //   { listname: "Personal", listcolor: "#DC143C" },

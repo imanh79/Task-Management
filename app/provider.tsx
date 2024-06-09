@@ -4,7 +4,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { type ThemeProviderProps } from "next-themes/dist/types";
 import { createContext, useContext, useState, useEffect } from "react";
 import { TaskTodo, ThemeContextType, Todo } from "@/types/types";
-
+import Cookie from "cookie-universal";
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const useTheme = () => {
@@ -39,6 +39,7 @@ export const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
   // For open/close calendar
   const [closecalendar, setclosecalendar] = useState(false);
   // Data todos
+
   const [todos, setTodos] = useState<Todo[]>([
     {
       id: 0,
@@ -52,9 +53,8 @@ export const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
   ]);
   // Task todos
   const [tasktodo, settasktodo] = useState<TaskTodo[]>([]);
-
-  
-
+  const cookies = Cookie();
+  cookies.get("todos");
   return (
     <ThemeContext.Provider
       value={{
