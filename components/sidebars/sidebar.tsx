@@ -116,7 +116,7 @@ const Sidebar = () => {
       className={`transform bg-bgside left-[-20rem] sm:left-[unset]  duration-700 ease-in-out overflow-clip z-30 fixed top-0 bottom-0  ${
         !togglem
           ? "sm:translate-x-0 left-0 "
-          : "sm:-translate-x-full -left-[0.01%] "
+          : "sm:-translate-x-full left-[1%] "
       }  sm:w-[300px] p-2 pr-2 pl-4 `}
     >
       <div className={`flex  w-full gap-4 items-center justify-between mr-2 `}>
