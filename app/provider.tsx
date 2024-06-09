@@ -53,20 +53,7 @@ export const ThemeProvider = ({ children, ...props }: ThemeProviderProps) => {
   // Task todos
   const [tasktodo, settasktodo] = useState<TaskTodo[]>([]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 640) {
-        // settogglem(true);
-      } else {
-      }
-    };
-
-    // Set the initial value based on the window width
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  
 
   return (
     <ThemeContext.Provider
