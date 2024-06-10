@@ -113,7 +113,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`transform bg-bgside left-[-20rem] sm:left-[unset]  duration-700 ease-in-out overflow-clip z-30 fixed top-0 bottom-0 pt-2  ${
+      className={`transform bg-bgside left-[-20rem] sm:left-[unset]  duration-700 ease-in-out overflow-clip z-30 fixed top-0 bottom-0 pt-3  ${
         !togglem
           ? "sm:translate-x-0 left-0 "
           : "sm:-translate-x-full left-[1%] "
