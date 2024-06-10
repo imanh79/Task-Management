@@ -39,7 +39,7 @@ const Main = () => {
   };
   const handleClick = () => {
     setclosecalendar(false);
-    settogglem(false);
+    // settogglem(false);
   };
   const handleClickright = () => {
     setclosecalendar(false);
