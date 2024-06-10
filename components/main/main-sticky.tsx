@@ -17,7 +17,7 @@ import {
   ContextMenuItem,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu";
-
+import Cookie from "cookie-universal";
 const Mainsticky = () => {
   const { todos, setTodos } = useTheme();
   const [openContextMenuId, setOpenContextMenuId] = useState(null);
@@ -31,8 +31,17 @@ const Mainsticky = () => {
   };
   const handleClick = () => {
     setclosecalendar(false);
-    settogglem(false);
+    if (togglem) {
+      settogglem(true);
+    }
   };
+  useEffect(() => {
+    const cookies = Cookie();
+    const storedTodos = cookies.get("todos");
+    if (storedTodos) {
+      setTodos(storedTodos);
+    }
+  }, []);
   const handleClickright = () => {
     setclosecalendar(false);
   };
@@ -55,7 +64,7 @@ const Mainsticky = () => {
       >
         <div className="flex justify-center items-baseline gap-2 pt-3">
           <Icon iconName="note" initialstyle="" />
-          <Title title="sticky" additionalClasses="mt-2" />
+          <Title title="Sticky" additionalClasses="mt-2" />
         </div>
       </div>
 

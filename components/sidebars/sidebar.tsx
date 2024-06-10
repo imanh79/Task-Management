@@ -123,7 +123,7 @@ const Sidebar = () => {
         <ProfileMenuSection />
 
         <Icon
-          iconName="bars"
+          iconName="remove"
           initialstyle="  iconhoverbtn"
           onClick={handleMenuToggle}
         />

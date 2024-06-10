@@ -59,7 +59,7 @@ const Main = () => {
         className="col-span-3 pb-12 px-5 w-full flex justify-start items-start"
         onClick={handleClick}
       >
-        <div className="flex justify-center items-baseline gap-2 pt-4">
+        <div className="flex justify-center items-baseline gap-2 pt-3">
           <Icon iconName="home" />
           <Title title="Tasks" additionalClasses="mt-2" />
         </div>

@@ -17,6 +17,7 @@ import {
   ContextMenuItem,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu";
+import Cookie from "cookie-universal";
 
 const MainImportant = () => {
   const { todos, setTodos } = useTheme();
@@ -31,17 +32,28 @@ const MainImportant = () => {
   };
   const handleClick = () => {
     setclosecalendar(false);
-    settogglem(false);
+    // settogglem(false);
+    // if (togglem) {
+    //   settogglem(true);
+    // }
   };
+  useEffect(() => {
+    const cookies = Cookie();
+    const storedTodos = cookies.get("todos");
+    if (storedTodos) {
+      setTodos(storedTodos);
+    }
+  }, []);
   const handleClickright = () => {
     setclosecalendar(false);
   };
   const importantfilter = todos.filter((item) => item.important === true);
   return (
     <div
-      className={`grid grid-rows-[auto,auto,auto,1fr,auto] grid-cols-[1fr,auto,auto,auto] h-full relative overflow-clip pl-12 ${
+      className={`grid grid-rows-[auto,1fr,auto] grid-cols-[1fr,auto,auto] h-full relative overflow-clip pl-12 ${
         !togglem ? "sm:pl-[290px]" : "pl-12"
       }`}
+      onClick={handleClick}
     >
       <div
         className="bg-bgside fixed bottom-0 left-0 top-0 z-20"
