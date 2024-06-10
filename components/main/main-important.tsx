@@ -21,30 +21,33 @@ import {
 const MainImportant = () => {
   const { todos, setTodos } = useTheme();
   const [openContextMenuId, setOpenContextMenuId] = useState(null);
-  const { toggle, settoggle } = useTheme();
+  const { toggle, settoggle, togglem, settogglem } = useTheme();
   const { closecalendar, setclosecalendar } = useTheme();
   const { toggleright, settoggleright } = useTheme();
   const { tasktodo, settasktodo } = useTheme();
   const deletehandler = (id: any) => {
     const updatedTodos = todos.filter((item) => item.id !== id);
     setTodos(updatedTodos);
-
-  
   };
   const handleClick = () => {
     setclosecalendar(false);
+    settogglem(false);
   };
   const handleClickright = () => {
     setclosecalendar(false);
   };
   const importantfilter = todos.filter((item) => item.important === true);
   return (
-    <div className="grid grid-rows-[auto,auto,auto,1fr,auto] grid-cols-[1fr,auto,auto] h-full relative overflow-clip pl-12  ">
+    <div
+      className={`grid grid-rows-[auto,auto,auto,1fr,auto] grid-cols-[1fr,auto,auto,auto] h-full relative overflow-clip pl-12 ${
+        !togglem ? "sm:pl-[290px]" : "pl-12"
+      }`}
+    >
       <div
         className="bg-bgside fixed bottom-0 left-0 top-0 z-20"
         onClick={handleClick}
       >
-        {toggle ? <Navmobile /> : ""}
+        <Navmobile />
       </div>
       <div
         className="col-span-2 px-5 w-full flex justify-start items-start flex-col"
