@@ -31,9 +31,9 @@ const Mainsticky = () => {
   };
   const handleClick = () => {
     setclosecalendar(false);
-    if (togglem) {
-      settogglem(true);
-    }
+    // if (togglem) {
+    //   settogglem(true);
+    // }
   };
   useEffect(() => {
     const cookies = Cookie();

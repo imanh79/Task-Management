@@ -54,7 +54,7 @@ const Main = () => {
       <div className="bg-bgside fixed bottom-0 left-0 top-0 z-20 overflow-clip">
         <Navmobile />
       </div>
-
+     
       <div
         className="col-span-3 pb-12 px-5 w-full flex justify-start items-start"
         onClick={handleClick}
