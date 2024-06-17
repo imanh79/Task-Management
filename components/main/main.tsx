@@ -10,7 +10,6 @@ import Navmobile from "../ui-kits/Nav-mobile";
 import Title from "../ui-customize/title";
 import Rightside from "../sidebars/rightside";
 import Listmain from "../ui-kits/list-main";
-import { ScrollArea } from "../ui/scroll-area";
 import {
   ContextMenu,
   ContextMenuContent,
